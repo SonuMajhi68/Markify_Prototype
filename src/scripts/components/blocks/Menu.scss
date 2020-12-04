@@ -1,0 +1,33 @@
+.mainmenu {
+  display: flex;
+  list-style-type: none;
+
+  & li {
+    flex-basis: 50px;
+    position: relative;
+    -webkit-app-region: no-drag;
+    text-align: center;
+    user-select: none;
+  }
+
+  & .submenu {
+    background-color: blue;
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    width: 200px;
+
+    & li {
+      padding: 10px 0 0 20px;
+      text-align: start;
+
+      &:last-child {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  & .show {
+    display: block;
+  }
+}
