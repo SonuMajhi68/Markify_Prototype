@@ -23,7 +23,11 @@ export default function Menu() {
   //       }
   //     }
   //   };
-
+  function display_preview()
+  {
+    const preview_pane = document.getElementsByClassName("workspace_preview");
+    preview_pane.style.width = "40%";
+  }
   return (
     <ul className="mainmenu">
       <li
@@ -54,6 +58,9 @@ export default function Menu() {
         <ul className="submenu">
           <li>New File</li>
         </ul>
+      </li>
+      <li className="menu_actions" onClick={()=>display_preview()}>
+        Preview
       </li>
     </ul>
   );

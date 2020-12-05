@@ -3,7 +3,7 @@
 .workspace {
   display: flex;
   height: calc(100vh - 50px);
-
+  // max-width: 100vw;
   &_activityBar {
     flex-basis: 50px;
     flex-shrink: 0;
@@ -13,7 +13,7 @@
   &_sideBar {
     flex-basis: 200px;
     background-color: $ws-sb;
-
+    max-width: 40%;
     &_resizable {
       background-color: $ws-re;
       height: 100%;
@@ -49,6 +49,7 @@
   &_preview {
     background-color: $ws-p;
     flex-grow: 1;
+    max-width: 40%;
 
     &_resizable {
       background-color: $ws-re;
@@ -57,6 +58,7 @@
       display: block;
       float: left;
       transition: all ease-in-out 0.2s;
+      // max-width: 100%;
 
       &:hover {
         background-color: $ws-re_h;

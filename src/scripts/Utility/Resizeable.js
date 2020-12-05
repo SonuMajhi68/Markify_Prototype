@@ -4,9 +4,9 @@ function ResizeableR(props) {
 
   props.addEventListener("mousedown", (e) => {
     prevX = e.clientX;
-
-    const mouseMove = (e) => {
-      const rect = sideBar.getBoundingClientRect();
+   
+    const mouseMove = async(e) => {
+      const rect = await sideBar.getBoundingClientRect();
 
       sideBar.style.flexBasis = rect.width - (prevX - e.clientX) + "px";
       prevX = e.clientX;
@@ -15,10 +15,11 @@ function ResizeableR(props) {
     const mouseUp = () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("mouseup", mouseUp);
+      
     };
-
     window.addEventListener("mousemove", mouseMove);
     window.addEventListener("mouseup", mouseUp);
+    
 
     console.log(sideBar);
   });
@@ -30,7 +31,7 @@ function ResizeableL(props) {
 
   props.addEventListener("mousedown", (e) => {
     prevX = e.clientX;
-
+    
     const mouseMove = (e) => {
       const rect = sideBar.getBoundingClientRect();
 
@@ -42,16 +43,17 @@ function ResizeableL(props) {
     const mouseUp = () => {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("mouseup", mouseUp);
+     
     };
-
     window.addEventListener("mousemove", mouseMove);
     window.addEventListener("mouseup", mouseUp);
+    
 
     console.log(sideBar);
   });
 }
 
 module.exports = {
-  ResizeableR: ResizeableR,
-  ResizeableL: ResizeableL,
+ ResizeableR,
+  ResizeableL,
 };
